@@ -11,7 +11,7 @@ import SwiftUI
 struct RadioAppCleanSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RadioPlayerMainView()
         }
     }
 }

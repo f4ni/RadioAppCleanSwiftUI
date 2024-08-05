@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		9A561E602C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */; };
-		9A561E622C4FB00B00909FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E612C4FB00B00909FAA /* ContentView.swift */; };
 		9A561E642C4FB00D00909FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E632C4FB00D00909FAA /* Assets.xcassets */; };
 		9A561E672C4FB00D00909FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E662C4FB00D00909FAA /* Preview Assets.xcassets */; };
 		9A561E712C4FB00D00909FAA /* RadioAppCleanSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E702C4FB00D00909FAA /* RadioAppCleanSwiftUITests.swift */; };
 		9A561E7B2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E7A2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITests.swift */; };
 		9A561E7D2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E7C2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift */; };
+		9A561E932C4FB31E00909FAA /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E922C4FB31E00909FAA /* RadioStation.swift */; };
+		9A561E942C4FB31E00909FAA /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E922C4FB31E00909FAA /* RadioStation.swift */; };
+		9A561E952C4FB31E00909FAA /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E922C4FB31E00909FAA /* RadioStation.swift */; };
+		9A561E982C4FB35E00909FAA /* StationContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E972C4FB35E00909FAA /* StationContact.swift */; };
+		9A561E992C4FB35E00909FAA /* StationContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E972C4FB35E00909FAA /* StationContact.swift */; };
+		9A561E9A2C4FB35E00909FAA /* StationContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E972C4FB35E00909FAA /* StationContact.swift */; };
+		9A561EB02C4FB59900909FAA /* RadioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EAF2C4FB59900909FAA /* RadioPlayerViewModel.swift */; };
+		9A561EB12C4FB59900909FAA /* RadioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EAF2C4FB59900909FAA /* RadioPlayerViewModel.swift */; };
+		9A561EB22C4FB59900909FAA /* RadioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EAF2C4FB59900909FAA /* RadioPlayerViewModel.swift */; };
+		9A561EB62C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EB52C4FB62000909FAA /* RadioPlayerMainView.swift */; };
+		9A561EB72C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EB52C4FB62000909FAA /* RadioPlayerMainView.swift */; };
+		9A561EB82C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EB52C4FB62000909FAA /* RadioPlayerMainView.swift */; };
+		9AB842FD2C5E18D4002B8124 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842FC2C5E18D4002B8124 /* FileStorage.swift */; };
+		9AB842FE2C5E18D4002B8124 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842FC2C5E18D4002B8124 /* FileStorage.swift */; };
+		9AB842FF2C5E18D4002B8124 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842FC2C5E18D4002B8124 /* FileStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +50,6 @@
 /* Begin PBXFileReference section */
 		9A561E5C2C4FB00B00909FAA /* RadioAppCleanSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAppCleanSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioAppCleanSwiftUIApp.swift; sourceTree = "<group>"; };
-		9A561E612C4FB00B00909FAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9A561E632C4FB00D00909FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A561E662C4FB00D00909FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A561E6C2C4FB00D00909FAA /* RadioAppCleanSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioAppCleanSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +57,8 @@
 		9A561E762C4FB00D00909FAA /* RadioAppCleanSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioAppCleanSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A561E7A2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioAppCleanSwiftUIUITests.swift; sourceTree = "<group>"; };
 		9A561E7C2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioAppCleanSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9A561E922C4FB31E00909FAA /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		9A561E972C4FB35E00909FAA /* StationContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +109,14 @@
 		9A561E5E2C4FB00B00909FAA /* RadioAppCleanSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */,
-				9A561E612C4FB00B00909FAA /* ContentView.swift */,
-				9A561E632C4FB00D00909FAA /* Assets.xcassets */,
-				9A561E652C4FB00D00909FAA /* Preview Content */,
+				9A561E892C4FB06500909FAA /* Application */,
+				9A561E8A2C4FB07800909FAA /* Data */,
+				9A561E8B2C4FB08A00909FAA /* Domain */,
+				9A561E8C2C4FB0D600909FAA /* Presentation */,
+				9A561E8D2C4FB11E00909FAA /* Services */,
+				9A561E8E2C4FB12D00909FAA /* Resources */,
+				9A561E8F2C4FB13700909FAA /* Utitlities */,
+				9A561E902C4FB14C00909FAA /* SupportingFiles */,
 			);
 			path = RadioAppCleanSwiftUI;
 			sourceTree = "<group>";
@@ -125,6 +144,89 @@
 				9A561E7C2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = RadioAppCleanSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		9A561E892C4FB06500909FAA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9A561EA42C4FB48D00909FAA /* UseCases */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9A561E8A2C4FB07800909FAA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9AB842FA2C5E18AF002B8124 /* LocalStorage */,
+				9A561E9B2C4FB3E700909FAA /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9A561E8C2C4FB0D600909FAA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9A561EB42C4FB5E400909FAA /* Views */,
+				9A561EB32C4FB5C000909FAA /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9A561E8E2C4FB12D00909FAA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A561E652C4FB00D00909FAA /* Preview Content */,
+				9A561E632C4FB00D00909FAA /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9A561E8F2C4FB13700909FAA /* Utitlities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utitlities;
+			sourceTree = "<group>";
+		};
+		9A561E902C4FB14C00909FAA /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9A561E912C4FB2F400909FAA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9A561E922C4FB31E00909FAA /* RadioStation.swift */,
+				9A561E972C4FB35E00909FAA /* StationContact.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9A561EB32C4FB5C000909FAA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9A561EAF2C4FB59900909FAA /* RadioPlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9A561EB42C4FB5E400909FAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A561EB92C4FB63200909FAA /* Components */,
+				9A561EB52C4FB62000909FAA /* RadioPlayerMainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A561EB92C4FB63200909FAA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A561E622C4FB00B00909FAA /* ContentView.swift in Sources */,
+				9A561E982C4FB35E00909FAA /* StationContact.swift in Sources */,
 				9A561E602C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift in Sources */,
+				9A561EB62C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */,
+				9A561E932C4FB31E00909FAA /* RadioStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +371,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A561E942C4FB31E00909FAA /* RadioStation.swift in Sources */,
 				9A561E712C4FB00D00909FAA /* RadioAppCleanSwiftUITests.swift in Sources */,
+				9A561E992C4FB35E00909FAA /* StationContact.swift in Sources */,
+				9A561EB12C4FB59900909FAA /* RadioPlayerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +382,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A561EB22C4FB59900909FAA /* RadioPlayerViewModel.swift in Sources */,
 				9A561E7D2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift in Sources */,
+				9A561E9A2C4FB35E00909FAA /* StationContact.swift in Sources */,
 				9A561E7B2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITests.swift in Sources */,
+				9A561EB82C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */,
+				9A561E952C4FB31E00909FAA /* RadioStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
