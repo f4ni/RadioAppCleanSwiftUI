@@ -59,6 +59,8 @@
 		9A561E7C2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioAppCleanSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A561E922C4FB31E00909FAA /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
 		9A561E972C4FB35E00909FAA /* StationContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationContact.swift; sourceTree = "<group>"; };
+		9A561EAF2C4FB59900909FAA /* RadioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewModel.swift; sourceTree = "<group>"; };
+		9A561EB52C4FB62000909FAA /* RadioPlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,14 @@
 				9A561E9B2C4FB3E700909FAA /* Network */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9A561E8B2C4FB08A00909FAA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9A561E912C4FB2F400909FAA /* Entities */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		9A561E8C2C4FB0D600909FAA /* Presentation */ = {
@@ -360,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A561E622C4FB00B00909FAA /* ContentView.swift in Sources */,
+				9A561EB02C4FB59900909FAA /* RadioPlayerViewModel.swift in Sources */,
 				9A561E982C4FB35E00909FAA /* StationContact.swift in Sources */,
 				9A561E602C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift in Sources */,
 				9A561EB62C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */,
@@ -371,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A561EB72C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */,
 				9A561E942C4FB31E00909FAA /* RadioStation.swift in Sources */,
 				9A561E712C4FB00D00909FAA /* RadioAppCleanSwiftUITests.swift in Sources */,
 				9A561E992C4FB35E00909FAA /* StationContact.swift in Sources */,
