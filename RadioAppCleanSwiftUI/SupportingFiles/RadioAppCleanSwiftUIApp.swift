@@ -13,5 +13,6 @@ struct RadioAppCleanSwiftUIApp: App {
         WindowGroup {
             RadioPlayerMainView()
         }
+        .environmentObject(PlayerManager.shared)
     }
 }

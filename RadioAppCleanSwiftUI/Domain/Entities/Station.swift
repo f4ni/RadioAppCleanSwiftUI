@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct Station: Decodable, Identifiable {
+struct Station: Decodable, Identifiable, Equatable {
+    static func == (lhs: Station, rhs: Station) -> Bool {
+        lhs.id == rhs.id
+    }
     
-    var id = UUID()
+    
+    let id = UUID()
     var name: String?
     var type: ChannelType?
     var castURL: String?
     var logo: String?
     var city: String?
     var frequence: String?
-    var isPlaying: Bool? = false
+//    var isPlaying: Bool? = false
     var webUrl: String?
     var background: String?
     var contact: [Contact]?
@@ -41,7 +45,7 @@ struct Station: Decodable, Identifiable {
         self_.logo = logo ?? self.logo
         self_.city = city ?? self.city
         self_.frequence = frequence ?? self.frequence
-        self_.isPlaying = isPlaying ?? self.isPlaying
+//        self_.isPlaying = isPlaying ?? self.isPlaying
         self_.webUrl = webUrl ?? self.webUrl
         self_.background = background ?? self.background
         self_.contact = contact ?? self.contact
