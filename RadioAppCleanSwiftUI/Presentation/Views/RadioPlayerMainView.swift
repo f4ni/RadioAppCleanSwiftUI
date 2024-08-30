@@ -17,6 +17,8 @@ struct RadioPlayerMainView: View {
     @State private var stationToPresent: Station?
     @State private var showDetail = false
     
+    @Namespace var namespace
+    
     var body: some View {
         NavigationStack(path: $navigationPath) {
             container

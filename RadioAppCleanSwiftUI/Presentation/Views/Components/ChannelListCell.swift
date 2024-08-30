@@ -10,7 +10,10 @@ import SwiftUI
 struct ChannelListCell: View {
     
     var content: ChannelListCellContent
+    var namespace: Namespace.ID
     var playPauseButtonAction: () -> Void
+    var idString: String {
+        content.id.uuidString
     }
     
     var body: some View {
@@ -21,7 +24,9 @@ struct ChannelListCell: View {
                 .frame(width: 50.0, height: 50.0)
                 .scaledToFit()
                 .mask(Rectangle())
+                .matchedGeometryEffect(id: "\(idString)-logo", in: namespace)
             Text(content.name)
+                .matchedGeometryEffect(id: "\(idString)-name", in: namespace)
             
             Spacer()
             Button {
@@ -48,5 +53,6 @@ extension ChannelListCell {
             .ultraThinMaterial,
             in: RoundedRectangle(cornerRadius: 16)
         )
+        .matchedGeometryEffect(id: "\(idString)-background", in: namespace)
     }
 }
