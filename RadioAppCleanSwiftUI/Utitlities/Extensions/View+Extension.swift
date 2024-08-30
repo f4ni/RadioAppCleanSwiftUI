@@ -17,3 +17,10 @@ extension View {
         }
     }
 }
+
+extension View {
+    @ViewBuilder
+    func rotationAnimation(speed: Double = 5) -> some View {
+        self.modifier(RotationAnimaton(speed: speed))
+    }
+}

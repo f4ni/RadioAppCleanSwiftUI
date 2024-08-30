@@ -32,6 +32,9 @@
 		9A561EBB2C4FB65700909FAA /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EBA2C4FB65700909FAA /* PlayerManager.swift */; };
 		9A561EBC2C4FB65700909FAA /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EBA2C4FB65700909FAA /* PlayerManager.swift */; };
 		9A561EBD2C4FB65700909FAA /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561EBA2C4FB65700909FAA /* PlayerManager.swift */; };
+		9A5C22CD2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C22CC2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift */; };
+		9A5C22CE2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C22CC2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift */; };
+		9A5C22CF2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C22CC2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift */; };
 		9A8D6F6C2C6FAF7D00B7B730 /* ChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F6B2C6FAF7D00B7B730 /* ChannelListCell.swift */; };
 		9A8D6F6D2C6FAF7D00B7B730 /* ChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F6B2C6FAF7D00B7B730 /* ChannelListCell.swift */; };
 		9A8D6F6E2C6FAF7D00B7B730 /* ChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F6B2C6FAF7D00B7B730 /* ChannelListCell.swift */; };
@@ -121,6 +124,7 @@
 		9A561EAF2C4FB59900909FAA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9A561EB52C4FB62000909FAA /* RadioPlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerMainView.swift; sourceTree = "<group>"; };
 		9A561EBA2C4FB65700909FAA /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		9A5C22CC2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModifier+RotationAnimaton.swift"; sourceTree = "<group>"; };
 		9A8D6F6A2C6FA25700B7B730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9A8D6F6B2C6FAF7D00B7B730 /* ChannelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListCell.swift; sourceTree = "<group>"; };
 		9A8D6F6F2C6FAF9900B7B730 /* ChannelListCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListCellContent.swift; sourceTree = "<group>"; };
@@ -289,9 +293,9 @@
 		9A561E8F2C4FB13700909FAA /* Utitlities */ = {
 			isa = PBXGroup;
 			children = (
-				9A8D6F772C6FB0F000B7B730 /* Image+Extension.swift */,
-				9A8D6F7B2C706A1D00B7B730 /* View+Extension.swift */,
-				9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */,
+				9A5C22CB2C81ADAE009077BB /* CustomViewModifiers */,
+				9A5C22CA2C81AD8F009077BB /* Extensions */,
+				9A4AF0EF2C74E58800072301 /* NetworkMonitor.swift */,
 			);
 			path = Utitlities;
 			sourceTree = "<group>";
@@ -363,6 +367,24 @@
 				9A8D6F6F2C6FAF9900B7B730 /* ChannelListCellContent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		9A5C22CA2C81AD8F009077BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A8D6F772C6FB0F000B7B730 /* Image+Extension.swift */,
+				9A8D6F7B2C706A1D00B7B730 /* View+Extension.swift */,
+				9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A5C22CB2C81ADAE009077BB /* CustomViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				9A5C22CC2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift */,
+			);
+			path = CustomViewModifiers;
 			sourceTree = "<group>";
 		};
 		9AB842E82C5924B0002B8124 /* RequestModels */ = {
@@ -550,6 +572,7 @@
 				9AB843122C61FFFD002B8124 /* FileStorageClient.swift in Sources */,
 				9AB842F92C5D616F002B8124 /* StationsWebRepository.swift in Sources */,
 				9A561E982C4FB35E00909FAA /* StationContact.swift in Sources */,
+				9A5C22CD2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift in Sources */,
 				9A8D6F6C2C6FAF7D00B7B730 /* ChannelListCell.swift in Sources */,
 				9A561E602C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift in Sources */,
 				9AB842FD2C5E18D4002B8124 /* FileStorage.swift in Sources */,
@@ -586,6 +609,7 @@
 				9A561EBC2C4FB65700909FAA /* PlayerManager.swift in Sources */,
 				9AB842FE2C5E18D4002B8124 /* FileStorage.swift in Sources */,
 				9A8D6F872C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */,
+				9A5C22CE2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift in Sources */,
 				9A561E942C4FB31E00909FAA /* Station.swift in Sources */,
 				9A8D6F6D2C6FAF7D00B7B730 /* ChannelListCell.swift in Sources */,
 				9A8D6F792C6FB0F000B7B730 /* Image+Extension.swift in Sources */,
@@ -616,6 +640,7 @@
 				9AB8431D2C62005E002B8124 /* EmbeddedFileClient.swift in Sources */,
 				9A561E7D2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift in Sources */,
 				9A8D6F762C6FB08100B7B730 /* Station+image.swift in Sources */,
+				9A5C22CF2C81ADD6009077BB /* ViewModifier+RotationAnimaton.swift in Sources */,
 				9A561EBD2C4FB65700909FAA /* PlayerManager.swift in Sources */,
 				9A561EA32C4FB45F00909FAA /* RadioStationInteraction.swift in Sources */,
 				9A8D6F802C70AD3800B7B730 /* StationsWebRepository.swift in Sources */,
