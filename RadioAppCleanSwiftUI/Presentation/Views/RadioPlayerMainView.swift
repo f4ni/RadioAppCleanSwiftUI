@@ -9,49 +9,98 @@ import SwiftUI
 
 struct RadioPlayerMainView: View {
     
-    @EnvironmentObject var player: PlayerManager
-    @StateObject var viewModel = ViewModel()
-    @State var alert = false
+    @EnvironmentObject private var player: PlayerManager
+    @StateObject private var viewModel = MainViewModel()
+    @State private var navigationPath = NavigationPath()
+    @State private var infoPagePresented = false
+    @State private var stationToPresent: Station?
+    @State private var showDetail = false
     
     var body: some View {
-        container
-        .onAppear(perform: {
-            viewModel.getRadioStations()
+        NavigationStack(path: $navigationPath) {
+            container
+                .background(backgroundView)
+                .onAppear(perform: {
+                    viewModel.getRadioStations()
+                })
+                .onReceive(player.$activeStation, perform: { value in
+                    viewModel.activeStation = value
+                })
+                .toolbar(.visible, for: .navigationBar)
+                .toolbar {
+                    Button(action: {
+                    infoPagePresented.toggle()
+                    }, label: {
+                        Image(systemName: "info.circle")
+                    })
+                }
+                .navigationTitle("Good to Listen")
+        }
+        .sheet(isPresented: $infoPagePresented, content: {
+            InfoPageView(content: InfoPageContent(about: "about"))
         })
-        .onReceive(player.$activeStation, perform: { value in
-            viewModel.activeStation = value
-        })
-        .alert(isPresented: $alert, content: {
-            Alert(title: Text("Alert Test"))
-        })
+        .navigationBarTitleDisplayMode(.large)
     }
-}
-
-#Preview {
-    RadioPlayerMainView()
-        .environmentObject(PlayerManager.shared)
 }
 
 extension RadioPlayerMainView {
     var container: some View {
-        List(viewModel.stations, id: \.id){ station in
-            let stationIsPlaying = viewModel.isPlaying(station: station)
-            ChannelListCell(
-                content: ChannelListCellContent(
-                    name: station.name ?? "",
-                    logo: station.image,
-                    buttonLabel:
-                        getPlayPauseButtonLabelImage(
-                            for: station
+        ZStack {
+            if network.connected, !viewModel.stations.isEmpty {
+                List(
+                    viewModel.stations,
+                    id: \.self,
+                    selection: $stationToPresent
+                ){ station in
+                    let stationIsPlaying = viewModel.isPlaying(station: station)
+                    ChannelListCell(
+                        content: ChannelListCellContent(
+                            station: station,
+                            buttonLabel:
+                                getPlayPauseButtonLabelImage(
+                                    for: station
+                                ),
+                            isAwaiting: stationIsPlaying && player.timeControlStatus == .waitingToPlayAtSpecifiedRate
                         ),
-                    isAwaiting: stationIsPlaying && player.timeControlStatus == .waitingToPlayAtSpecifiedRate
-                ),
-                playPauseButtonAction: {
-                    stationIsPlaying
-                    ? player.pause()
-                    : player.play(station)
+                        namespace: namespace, playPauseButtonAction: {
+                            stationIsPlaying
+                            ? player.pause()
+                            : player.play(station)
+                        }
+                    )
+                    .listRowBackground(
+                        Color.clear
+                    )
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
+                .listRowSpacing(6)
+                .scrollContentBackground(.hidden)
+                
+                if let stationToPresent, showDetail {
+                    StationDetailView(
+                        showDetail: $showDetail,
+                        station: stationToPresent,
+                        namespace: namespace
+                    )
+                }
+
+            } else {
+                if viewModel.stations.isEmpty {
+                    ContentUnavailableView("Station list couldn't load", systemImage: "exclamationmark.bubble")
                 }
             )
+            }
+        }
+        .padding(0)
+        .onChange(of: stationToPresent) {
+            guard stationToPresent != nil else { return }
+            withAnimation(.spring(.smooth, blendDuration: 0.3)) {
+                showDetail.toggle()
+            }
+        }
+        .onChange(of: showDetail) {
+            guard !showDetail else { return }
+            stationToPresent = nil
         }
     }
     
@@ -61,4 +110,16 @@ extension RadioPlayerMainView {
         ? .pauseButton
         : .playButton
     }
+}
+
+extension RadioPlayerMainView {
+    var backgroundView: some View {
+        LinearGradient.oceanGradient
+            .ignoresSafeArea(.all)
+    }
+}
+
+#Preview {
+    RadioPlayerMainView()
+        .environmentObject(PlayerManager.shared)
 }

@@ -15,15 +15,13 @@ struct ChannelListCellContent: Identifiable {
     var isAwaiting: Bool
     
     init(
-        id: UUID = UUID(),
-        name: String,
-        logo: Image,
+        station: Station,
         buttonLabel: Image,
         isAwaiting: Bool = false
     ) {
-        self.id = id
-        self.name = name
-        self.logo = logo
+        self.id = station.id
+        self.name = station.name ?? ""
+        self.logo = station.image
         self.buttonLabel = buttonLabel
         self.isAwaiting = isAwaiting
     }
@@ -31,6 +29,6 @@ struct ChannelListCellContent: Identifiable {
 
 extension ChannelListCellContent {
     static var dummy: Self {
-        Self(name: "Bla Radio Station", logo: Image("cagrifm.png"), buttonLabel: Image.playButton)
+        Self(station: Station(name: "Bla Radio Station", logo: "rehbertv 1"), buttonLabel: Image.playButton)
     }
 }

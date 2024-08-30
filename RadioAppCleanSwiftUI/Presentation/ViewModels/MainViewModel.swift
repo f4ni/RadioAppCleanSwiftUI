@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class ViewModel: ObservableObject {
+final class MainViewModel: ObservableObject {
     
 
     var stationsInteractor: StationsInteractorInterface
