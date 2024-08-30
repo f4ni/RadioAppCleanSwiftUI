@@ -7,11 +7,14 @@
 
 import Foundation
 
-struct Station: Decodable, Identifiable, Equatable {
+struct Station: Decodable, Identifiable, Hashable {
     static func == (lhs: Station, rhs: Station) -> Bool {
         lhs.id == rhs.id
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
     let id = UUID()
     var name: String?
