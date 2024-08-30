@@ -57,6 +57,9 @@
 		9A8D6F862C70AD5200B7B730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E632C4FB00D00909FAA /* Assets.xcassets */; };
 		9A8D6F872C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */; };
 		9A8D6F882C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */; };
+		9A8D6F8D2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */; };
+		9A8D6F8E2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */; };
+		9A8D6F8F2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */; };
 		9AB842EB2C5936C5002B8124 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842EA2C5936C5002B8124 /* NetworkClient.swift */; };
 		9AB842ED2C5936D3002B8124 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842EC2C5936D3002B8124 /* HTTPMethod.swift */; };
 		9AB842EF2C593767002B8124 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842EE2C593767002B8124 /* NetworkError.swift */; };
@@ -124,6 +127,7 @@
 		9A8D6F732C6FB08100B7B730 /* Station+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Station+image.swift"; sourceTree = "<group>"; };
 		9A8D6F772C6FB0F000B7B730 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		9A8D6F7B2C706A1D00B7B730 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+extension.swift"; sourceTree = "<group>"; };
 		9AB842EA2C5936C5002B8124 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9AB842EC2C5936D3002B8124 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		9AB842EE2C593767002B8124 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			children = (
 				9A8D6F772C6FB0F000B7B730 /* Image+Extension.swift */,
 				9A8D6F7B2C706A1D00B7B730 /* View+Extension.swift */,
+				9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */,
 			);
 			path = Utitlities;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				9A561E932C4FB31E00909FAA /* Station.swift in Sources */,
 				9A8D6F742C6FB08100B7B730 /* Station+image.swift in Sources */,
 				9A8D6F702C6FAF9900B7B730 /* ChannelListCellContent.swift in Sources */,
+				9A8D6F8D2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +573,7 @@
 			files = (
 				9AB843242C622A0E002B8124 /* EmbeddedFileDataModel.swift in Sources */,
 				9A561E942C4FB31E00909FAA /* Station.swift in Sources */,
+				9A8D6F8E2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */,
 				9A8D6F752C6FB08100B7B730 /* Station+image.swift in Sources */,
 				9A8D6F812C70AD3E00B7B730 /* APIEndpoints.swift in Sources */,
 				9AB843182C62004E002B8124 /* EmbeddedFileManager.swift in Sources */,
@@ -613,6 +620,7 @@
 				9A561EA32C4FB45F00909FAA /* RadioStationInteraction.swift in Sources */,
 				9A8D6F802C70AD3800B7B730 /* StationsWebRepository.swift in Sources */,
 				9A8D6F882C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */,
+				9A8D6F8F2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */,
 				9A561E9A2C4FB35E00909FAA /* StationContact.swift in Sources */,
 				9AB843252C622A0E002B8124 /* EmbeddedFileDataModel.swift in Sources */,
 				9A8D6F7A2C6FB0F000B7B730 /* Image+Extension.swift in Sources */,
