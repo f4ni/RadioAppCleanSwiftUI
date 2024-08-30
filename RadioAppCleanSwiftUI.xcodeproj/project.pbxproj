@@ -10,6 +10,9 @@
 		9A4AF0EC2C737E3D00072301 /* InfoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0EB2C737E3D00072301 /* InfoPageView.swift */; };
 		9A4AF0ED2C737E3D00072301 /* InfoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0EB2C737E3D00072301 /* InfoPageView.swift */; };
 		9A4AF0EE2C737E3D00072301 /* InfoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0EB2C737E3D00072301 /* InfoPageView.swift */; };
+		9A4AF0F02C74E58800072301 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0EF2C74E58800072301 /* NetworkMonitor.swift */; };
+		9A4AF0F12C74E58800072301 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0EF2C74E58800072301 /* NetworkMonitor.swift */; };
+		9A4AF0F22C74E58800072301 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0EF2C74E58800072301 /* NetworkMonitor.swift */; };
 		9A4AF0F42C79B34F00072301 /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0F32C79B34F00072301 /* StationDetailView.swift */; };
 		9A4AF0F52C79B34F00072301 /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0F32C79B34F00072301 /* StationDetailView.swift */; };
 		9A4AF0F62C79B34F00072301 /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AF0F32C79B34F00072301 /* StationDetailView.swift */; };
@@ -115,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		9A4AF0EB2C737E3D00072301 /* InfoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageView.swift; sourceTree = "<group>"; };
+		9A4AF0EF2C74E58800072301 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		9A4AF0F32C79B34F00072301 /* StationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailView.swift; sourceTree = "<group>"; };
 		9A561E5C2C4FB00B00909FAA /* RadioAppCleanSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAppCleanSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioAppCleanSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -588,6 +592,7 @@
 				9A561E602C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift in Sources */,
 				9AB842FD2C5E18D4002B8124 /* FileStorage.swift in Sources */,
 				9A561EB62C4FB62000909FAA /* RadioPlayerMainView.swift in Sources */,
+				9A4AF0F02C74E58800072301 /* NetworkMonitor.swift in Sources */,
 				9AB842ED2C5936D3002B8124 /* HTTPMethod.swift in Sources */,
 				9A8D6F7C2C706A1D00B7B730 /* View+Extension.swift in Sources */,
 				9AB842F52C59F9F7002B8124 /* FetchRadioStationsRequest.swift in Sources */,
@@ -619,6 +624,7 @@
 				9A8D6F712C6FAF9900B7B730 /* ChannelListCellContent.swift in Sources */,
 				9A4AF0F52C79B34F00072301 /* StationDetailView.swift in Sources */,
 				9A561EB12C4FB59900909FAA /* MainViewModel.swift in Sources */,
+				9A4AF0F12C74E58800072301 /* NetworkMonitor.swift in Sources */,
 				9A561EBC2C4FB65700909FAA /* PlayerManager.swift in Sources */,
 				9AB842FE2C5E18D4002B8124 /* FileStorage.swift in Sources */,
 				9A8D6F872C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */,
@@ -649,6 +655,7 @@
 				9A561E7D2C4FB00D00909FAA /* RadioAppCleanSwiftUIUITestsLaunchTests.swift in Sources */,
 				9A4AF0F62C79B34F00072301 /* StationDetailView.swift in Sources */,
 				9A561EAE2C4FB54F00909FAA /* StationsEmbeddedRepository.swift in Sources */,
+				9A4AF0F22C74E58800072301 /* NetworkMonitor.swift in Sources */,
 				9AB842FF2C5E18D4002B8124 /* FileStorage.swift in Sources */,
 				9A561EB22C4FB59900909FAA /* MainViewModel.swift in Sources */,
 				9AB8431D2C62005E002B8124 /* EmbeddedFileClient.swift in Sources */,

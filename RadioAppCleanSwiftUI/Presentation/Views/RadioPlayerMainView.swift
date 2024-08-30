@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RadioPlayerMainView: View {
     
+    @Environment(\.network) private var network: NetworkMonitor
     @EnvironmentObject private var player: PlayerManager
     @StateObject private var viewModel = MainViewModel()
     @State private var navigationPath = NavigationPath()
@@ -88,7 +89,15 @@ extension RadioPlayerMainView {
                 if viewModel.stations.isEmpty {
                     ContentUnavailableView("Station list couldn't load", systemImage: "exclamationmark.bubble")
                 }
-            )
+                if !network.connected {
+                    ContentUnavailableView(
+                        "No Network Connection",
+                        systemImage: "wifi.exclamationmark",
+                        description: Text(
+                            "Check your connection"
+                        )
+                    )
+                }
             }
         }
         .padding(0)

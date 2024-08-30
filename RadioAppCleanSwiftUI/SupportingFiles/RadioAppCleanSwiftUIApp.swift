@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct RadioAppCleanSwiftUIApp: App {
+    @State private var networkMonitor = NetworkMonitor()
     var body: some Scene {
         WindowGroup {
             RadioPlayerMainView()
                 .environmentObject(PlayerManager.shared)
+                .environment(\.network, networkMonitor)
         }
-        .environmentObject(PlayerManager.shared)
     }
 }
