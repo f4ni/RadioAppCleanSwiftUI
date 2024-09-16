@@ -21,6 +21,7 @@ struct RadioPlayerMainView: View {
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
+            
             container
                 .background(backgroundView)
                 .onAppear(perform: {
@@ -38,6 +39,7 @@ struct RadioPlayerMainView: View {
                     })
                 }
                 .navigationTitle("Good to Listen")
+            
         }
         .sheet(isPresented: $infoPagePresented, content: {
             InfoPageView(content: InfoPageContent(about: "about"))
@@ -48,14 +50,16 @@ struct RadioPlayerMainView: View {
 
 extension RadioPlayerMainView {
     var container: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             if network.connected, !viewModel.stations.isEmpty {
                 List(
                     viewModel.stations,
                     id: \.self,
                     selection: $stationToPresent
                 ){ station in
+                    
                     let stationIsPlaying = viewModel.isPlaying(station: station)
+                    
                     ChannelListCell(
                         content: ChannelListCellContent(
                             station: station,
@@ -66,15 +70,14 @@ extension RadioPlayerMainView {
                             isAwaiting: stationIsPlaying && player.timeControlStatus == .waitingToPlayAtSpecifiedRate
                         ),
                         namespace: namespace, playPauseButtonAction: {
-                            stationIsPlaying
-                            ? player.pause()
-                            : player.play(station)
+                            playPauseButtonAction(station)
                         }
                     )
                     .listRowBackground(
                         Color.clear
                     )
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    
                 }
                 .listRowSpacing(6)
                 .scrollContentBackground(.hidden)
@@ -87,10 +90,14 @@ extension RadioPlayerMainView {
                     )
                 }
 
+                playerButtonsContainer
+                
             } else {
+                
                 if viewModel.stations.isEmpty {
                     ContentUnavailableView("Station list couldn't load", systemImage: "exclamationmark.bubble")
                 }
+                
                 if !network.connected {
                     ContentUnavailableView(
                         "No Network Connection",
@@ -100,6 +107,7 @@ extension RadioPlayerMainView {
                         )
                     )
                 }
+                
             }
         }
         .padding(0)
@@ -115,11 +123,63 @@ extension RadioPlayerMainView {
         }
     }
     
+    private func playPauseButtonAction(_ station: Station) {
+        (station.isPlaying ?? false)
+        ? player.pause()
+        : player.play(station)
+    }
     
-    func getPlayPauseButtonLabelImage(for station: Station) ->  Image {
-        viewModel.isPlaying(station: station) && player.timeControlStatus != .waitingToPlayAtSpecifiedRate
-        ? .pauseButton
-        : .playButton
+    func getPlayPauseButtonLabelImage(for station: Station? = nil) ->  Image {
+        var status: Bool = player.isPLaying
+        
+        if let station {
+            status = viewModel.isPlaying(station: station) && player.timeControlStatus != .waitingToPlayAtSpecifiedRate
+        }
+        
+        return status ? .pauseButton : .playButton
+    }
+}
+
+extension RadioPlayerMainView {
+    var playerButtonsContainer: some View {
+        ZStack {
+            Color.clear.background(.thinMaterial)
+                .clipShape(Capsule())
+                .frame( maxHeight: .infinity, alignment: .bottom)
+                .padding(.vertical, 18)
+            HStack {
+                Group {
+                    Button(action: {}, label: {
+                        Image.previousButton
+                    })
+                    Button(action: {
+                        player.isPLaying ? player.pause() : player.play(viewModel.stations.first)
+                    }, label: {
+                        getPlayPauseButtonLabelImage()
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 50)
+                            .padding(20)
+                            .background(.ultraThinMaterial)
+                            .clipShape(Circle())
+                    })
+                    Button(action: {}, label: {
+                        Image.nextButton
+                    })
+                }
+                .foregroundStyle(LinearGradient.oceanGradient.blendMode(.multiply))
+                .fontWeight(.bold)
+                .frame(height: 30)
+                .padding()
+            }
+            .layoutPriority(2)
+            .padding()
+            .clipShape(Capsule())
+        }
+        .shadow(color: .gray.opacity(0.5), radius: 10, x: 3, y: 5)
+        .fixedSize(horizontal: true, vertical: true)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .padding()
     }
 }
 

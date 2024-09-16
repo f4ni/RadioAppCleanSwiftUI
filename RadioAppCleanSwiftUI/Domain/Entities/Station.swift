@@ -23,7 +23,7 @@ struct Station: Decodable, Identifiable, Hashable {
     var logo: String?
     var city: String?
     var frequence: String?
-//    var isPlaying: Bool? = false
+    var isPlaying: Bool? = false
     var webUrl: String?
     var background: String?
     var contact: [Contact]?
@@ -48,12 +48,20 @@ struct Station: Decodable, Identifiable, Hashable {
         self_.logo = logo ?? self.logo
         self_.city = city ?? self.city
         self_.frequence = frequence ?? self.frequence
-//        self_.isPlaying = isPlaying ?? self.isPlaying
+        self_.isPlaying = isPlaying ?? self.isPlaying
         self_.webUrl = webUrl ?? self.webUrl
         self_.background = background ?? self.background
         self_.contact = contact ?? self.contact
         
         return self_
+    }
+    
+    mutating func play() {
+        self.isPlaying = true
+    }
+    
+    mutating func pause() {
+        self.isPlaying = false
     }
 }
 

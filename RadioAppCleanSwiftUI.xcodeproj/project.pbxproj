@@ -60,10 +60,6 @@
 		9A8D6F802C70AD3800B7B730 /* StationsWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842F82C5D616F002B8124 /* StationsWebRepository.swift */; };
 		9A8D6F812C70AD3E00B7B730 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842F62C5CBFDF002B8124 /* APIEndpoints.swift */; };
 		9A8D6F822C70AD3E00B7B730 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB842F62C5CBFDF002B8124 /* APIEndpoints.swift */; };
-		9A8D6F832C70AD4E00B7B730 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E662C4FB00D00909FAA /* Preview Assets.xcassets */; };
-		9A8D6F842C70AD4F00B7B730 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E662C4FB00D00909FAA /* Preview Assets.xcassets */; };
-		9A8D6F852C70AD5200B7B730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E632C4FB00D00909FAA /* Assets.xcassets */; };
-		9A8D6F862C70AD5200B7B730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A561E632C4FB00D00909FAA /* Assets.xcassets */; };
 		9A8D6F872C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */; };
 		9A8D6F882C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A561E5F2C4FB00B00909FAA /* RadioAppCleanSwiftUIApp.swift */; };
 		9A8D6F8D2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D6F8C2C71E37D00B7B730 /* LinearGradient+extension.swift */; };
@@ -94,6 +90,9 @@
 		9AB843272C6235BB002B8124 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB843262C6235BB002B8124 /* Decoder.swift */; };
 		9AB843282C6235BB002B8124 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB843262C6235BB002B8124 /* Decoder.swift */; };
 		9AB843292C6235BB002B8124 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB843262C6235BB002B8124 /* Decoder.swift */; };
+		9ACC4CAE2C9358300024F656 /* ChannelListCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CAD2C9358300024F656 /* ChannelListCellContent.swift */; };
+		9ACC4CAF2C9358300024F656 /* ChannelListCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CAD2C9358300024F656 /* ChannelListCellContent.swift */; };
+		9ACC4CB02C9358300024F656 /* ChannelListCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CAD2C9358300024F656 /* ChannelListCellContent.swift */; };
 		9ACC4CB22C935F130024F656 /* ChannelListCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CB12C935F130024F656 /* ChannelListCellContent.swift */; };
 		9ACC4CB32C935F170024F656 /* ChannelListCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CB12C935F130024F656 /* ChannelListCellContent.swift */; };
 		9ACC4CB42C935F180024F656 /* ChannelListCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CB12C935F130024F656 /* ChannelListCellContent.swift */; };
@@ -156,6 +155,7 @@
 		9AB8431A2C62005E002B8124 /* EmbeddedFileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedFileClient.swift; sourceTree = "<group>"; };
 		9AB843222C622A0E002B8124 /* EmbeddedFileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedFileDataModel.swift; sourceTree = "<group>"; };
 		9AB843262C6235BB002B8124 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		9ACC4CAD2C9358300024F656 /* ChannelListCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListCellContent.swift; sourceTree = "<group>"; };
 		9ACC4CB12C935F130024F656 /* ChannelListCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListCellContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -378,6 +378,7 @@
 			children = (
 				9A8D6F6B2C6FAF7D00B7B730 /* ChannelListCell.swift */,
 				9ACC4CB12C935F130024F656 /* ChannelListCellContent.swift */,
+				9ACC4CAD2C9358300024F656 /* ChannelListCellContent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -582,6 +583,7 @@
 				9A561EBB2C4FB65700909FAA /* PlayerManager.swift in Sources */,
 				9AB843232C622A0E002B8124 /* EmbeddedFileDataModel.swift in Sources */,
 				9ACC4CB22C935F130024F656 /* ChannelListCellContent.swift in Sources */,
+				9ACC4CAE2C9358300024F656 /* ChannelListCellContent.swift in Sources */,
 				9AB842EB2C5936C5002B8124 /* NetworkClient.swift in Sources */,
 				9A561EA12C4FB45F00909FAA /* RadioStationInteraction.swift in Sources */,
 				9AB843122C61FFFD002B8124 /* FileStorageClient.swift in Sources */,
@@ -634,6 +636,7 @@
 				9A561EA22C4FB45F00909FAA /* RadioStationInteraction.swift in Sources */,
 				9A561E712C4FB00D00909FAA /* RadioAppCleanSwiftUITests.swift in Sources */,
 				9ACC4CB32C935F170024F656 /* ChannelListCellContent.swift in Sources */,
+				9ACC4CAF2C9358300024F656 /* ChannelListCellContent.swift in Sources */,
 				9AB8431C2C62005E002B8124 /* EmbeddedFileClient.swift in Sources */,
 				9A8D6F7D2C706A1D00B7B730 /* View+Extension.swift in Sources */,
 				9A561E992C4FB35E00909FAA /* StationContact.swift in Sources */,
@@ -666,6 +669,7 @@
 				9A561EA32C4FB45F00909FAA /* RadioStationInteraction.swift in Sources */,
 				9A8D6F802C70AD3800B7B730 /* StationsWebRepository.swift in Sources */,
 				9ACC4CB42C935F180024F656 /* ChannelListCellContent.swift in Sources */,
+				9ACC4CB02C9358300024F656 /* ChannelListCellContent.swift in Sources */,
 				9A8D6F882C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */,
 				9A8D6F8F2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */,
 				9A561E9A2C4FB35E00909FAA /* StationContact.swift in Sources */,
