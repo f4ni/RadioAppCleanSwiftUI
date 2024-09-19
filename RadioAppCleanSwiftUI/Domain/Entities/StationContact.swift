@@ -9,16 +9,24 @@ import Foundation
 
 // MARK: - Contact
 struct Contact: Codable, Identifiable {
-    var id: UUID?
-    var name: ContactChannelName?
+    let id = UUID()
+    var type: ContactType?
     var target: String?
 }
 
-enum ContactChannelName: String, Codable{
+enum ContactType: String, Codable{
     case telephone
     case whatsapp
     case telegram
     case youtube
     case instagram
     case web
+    
+    static var toFollow: [Self] {
+        [.instagram, .youtube]
+    }
+    
+    static var toContract: [Self] {
+        [.telephone, .whatsapp, .telegram]
+    }
 }

@@ -6,53 +6,72 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ChannelListCell: View {
-    
-    var content: ChannelListCellContent
-    var namespace: Namespace.ID
+
+    @Namespace var namespace
+    var station: Station?
+    @Binding var expandedStation: Station?
+    var timeControlStatus: AVPlayer.TimeControlStatus
     var playPauseButtonAction: () -> Void
-    var idString: String {
-        content.id.uuidString
+    var isExpanded: Bool {
+        expandedStation == station
     }
     
     var body: some View {
-        HStack {
-            content.logo
-                .resizable(capInsets: EdgeInsets())
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50.0, height: 50.0)
-                .scaledToFit()
-                .mask(Rectangle())
-                .matchedGeometryEffect(id: "\(idString)-logo", in: namespace)
-            Text(content.name)
-                .matchedGeometryEffect(id: "\(idString)-name", in: namespace)
-            
-            Spacer()
-            Button {
-                playPauseButtonAction()
-            } label: {
-                content.buttonLabel
-                .resizable()
-                .frame(width: 44, height: 44)
-                .if(content.isAwaiting) { view in
-                    view
-                    .rotationAnimation(speed: 360)
+        
+        ZStack {
+     
+            if let station {
+                if isExpanded {
+                    StationListCellExpanded(namespace: namespace, station: station) {
+                        collapseCell()
+                   }
+               } else {
+                   StationListCellCollapsed(namespace: namespace, content: .init(station: station, buttonLabel: Image.playButton)) {
+
+                    }
+                    .onTapGesture {
+                        expandCell()
+                    }
                 }
             }
-            .buttonStyle(.borderless)
         }
-        .padding()
-        .background(background)
+    }
+
+    private func expandCell() {
+        withAnimation {
+            expandedStation = station
+        }
+        debugPrint("expand")
+    }
+    
+    private func collapseCell() {
+        withAnimation {
+            expandedStation = nil
+        }
+        debugPrint("collapse")
+    }
+
+    private func getPlayPauseButtonLabelImage(for station: Station? = nil) ->  Image {
+        (station?.isPlaying ?? false) ? .pauseButton : .playButton
     }
 }
 
-extension ChannelListCell {
-    var background: some View {
-        Color.clear.background(
-            .ultraThinMaterial,
-            in: RoundedRectangle(cornerRadius: 16)
+#Preview {
+    @Namespace var namespace
+    let st1 = Station(name: "chnl1")
+    @State var st2: Station? = Station(name: "chnl2")
+    
+    return VStack {
+        ChannelListCell(
+            namespace: _namespace,
+            station: st1,
+            expandedStation: $st2,
+            timeControlStatus: .waitingToPlayAtSpecifiedRate,
+            playPauseButtonAction: {}
         )
-        .matchedGeometryEffect(id: "\(idString)-background", in: namespace)
+        .padding()
     }
 }

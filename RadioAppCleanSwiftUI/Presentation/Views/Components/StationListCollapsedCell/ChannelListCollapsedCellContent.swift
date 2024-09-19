@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-struct ChannelListCellContent: Identifiable {
+struct ChannelListCollapsedCellContent: Identifiable {
     var id = UUID()
     var name: String
     var logo: Image
     var buttonLabel: Image
-    var isAwaiting: Bool
+    var isPlaying: Bool
     
     init(
         station: Station,
         buttonLabel: Image,
-        isAwaiting: Bool = false
+        isPlaying: Bool = false
     ) {
         self.id = station.id
         self.name = station.name ?? ""
         self.logo = station.image
         self.buttonLabel = buttonLabel
-        self.isAwaiting = isAwaiting
+        self.isPlaying = isPlaying
     }
 }
 
-extension ChannelListCellContent {
+extension ChannelListCollapsedCellContent {
     static var dummy: Self {
         Self(station: Station(name: "Bla Radio Station", logo: "rehbertv 1"), buttonLabel: Image.playButton)
     }

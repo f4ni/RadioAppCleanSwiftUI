@@ -23,23 +23,7 @@ class PlayerManager: ObservableObject {
     
     private init(){
         player = AVPlayer()
-//        $activeStation.sink { value in
-////            debugPrint(value as Any)
-//        }
-//        .store(in: &cancellables)
-        
-       
-//        addPeriodicObserver()
-        
     }
-    
-//    func addPeriodicObserver() {
-//        let interval = CMTime(value: 1, timescale: 2)
-//        
-//        timeObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: .main, using: { time in
-//            debugPrint(time)
-//        })
-//    }
     
     func activateSession() {
         do {
@@ -103,10 +87,6 @@ class PlayerManager: ObservableObject {
         isPLaying = false
         activeStation = nil
     }
-    
-//    func getPlayingChannel() -> ChannelViewModel?{
-//        return playingChannel
-//    }
     
     func getVideoPlayer() -> AVPlayer? {
         self.player

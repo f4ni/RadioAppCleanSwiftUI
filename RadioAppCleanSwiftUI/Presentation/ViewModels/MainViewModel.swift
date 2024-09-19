@@ -14,6 +14,7 @@ final class MainViewModel: ObservableObject {
     
     @Published var stations: [Station] = []
     @Published var activeStation: Station?
+    @Published var expandedStation: Station?
 
     init(
         stationsInteractor: StationsInteractorInterface = StationsInteractor(),

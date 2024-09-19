@@ -28,6 +28,18 @@ struct Station: Decodable, Identifiable, Hashable {
     var background: String?
     var contact: [Contact]?
     
+    var filteredContact: [Contact]? {
+        contact?.filter({ c in
+            ContactType.toContract.contains(where: {$0 == c.type})
+        })
+    }
+    
+    var toFollow: [Contact]? {
+        contact?.filter({ c in
+            ContactType.toFollow.contains(where: {$0 == c.type})
+        })
+    }
+    
     public func update(
         name: String? = nil,
         type: ChannelType? = nil,
@@ -62,6 +74,10 @@ struct Station: Decodable, Identifiable, Hashable {
     
     mutating func pause() {
         self.isPlaying = false
+    }
+    
+    mutating func setPlayingStatus(to isPlaying: Bool) {
+        self.isPlaying = isPlaying
     }
 }
 

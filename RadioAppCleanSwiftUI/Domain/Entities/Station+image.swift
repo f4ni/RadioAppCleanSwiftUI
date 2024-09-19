@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Station {
     var image: Image {
-        guard let logo
+        guard let logo, UIImage(named: logo) != nil
         else {
             return Image(systemName: "dot.radiowaves.left.and.right")
         }

@@ -14,11 +14,7 @@ struct RadioPlayerMainView: View {
     @StateObject private var viewModel = MainViewModel()
     @State private var navigationPath = NavigationPath()
     @State private var infoPagePresented = false
-    @State private var stationToPresent: Station?
-    @State private var showDetail = false
-    
-    @Namespace var namespace
-    
+        
     var body: some View {
         NavigationStack(path: $navigationPath) {
             
@@ -52,44 +48,20 @@ extension RadioPlayerMainView {
     var container: some View {
         ZStack(alignment: .top) {
             if network.connected, !viewModel.stations.isEmpty {
-                List(
-                    viewModel.stations,
-                    id: \.self,
-                    selection: $stationToPresent
-                ){ station in
-                    
-                    let stationIsPlaying = viewModel.isPlaying(station: station)
-                    
-                    ChannelListCell(
-                        content: ChannelListCellContent(
-                            station: station,
-                            buttonLabel:
-                                getPlayPauseButtonLabelImage(
-                                    for: station
-                                ),
-                            isAwaiting: stationIsPlaying && player.timeControlStatus == .waitingToPlayAtSpecifiedRate
-                        ),
-                        namespace: namespace, playPauseButtonAction: {
-                            playPauseButtonAction(station)
+                ScrollView {
+                    VStack {
+                        ForEach(viewModel.stations) { station in
+                            ChannelListCell(
+                                station: station,
+                                expandedStation: $viewModel.expandedStation,
+                                timeControlStatus: player.timeControlStatus,
+                                playPauseButtonAction: {
+                                    playPauseButtonAction(station)
+                                }
+                            )
                         }
-                    )
-                    .listRowBackground(
-                        Color.clear
-                    )
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    
+                    }
                 }
-                .listRowSpacing(6)
-                .scrollContentBackground(.hidden)
-                
-                if let stationToPresent, showDetail {
-                    StationDetailView(
-                        showDetail: $showDetail,
-                        station: stationToPresent,
-                        namespace: namespace
-                    )
-                }
-
                 playerButtonsContainer
                 
             } else {
@@ -110,17 +82,7 @@ extension RadioPlayerMainView {
                 
             }
         }
-        .padding(0)
-        .onChange(of: stationToPresent) {
-            guard stationToPresent != nil else { return }
-            withAnimation(.spring(.smooth, blendDuration: 0.3)) {
-                showDetail.toggle()
-            }
-        }
-        .onChange(of: showDetail) {
-            guard !showDetail else { return }
-            stationToPresent = nil
-        }
+        .padding()
     }
     
     private func playPauseButtonAction(_ station: Station) {
