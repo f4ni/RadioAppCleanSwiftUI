@@ -30,17 +30,17 @@ struct Station: Decodable, Identifiable, Hashable {
     
     var filteredContact: [Contact]? {
         contact?.filter({ c in
-            ContactType.toContract.contains(where: {$0 == c.type})
+            SocialNetworkType.toContract.contains(where: {$0 == c.type})
         })
     }
     
     var toFollow: [Contact]? {
         contact?.filter({ c in
-            ContactType.toFollow.contains(where: {$0 == c.type})
+            SocialNetworkType.toFollow.contains(where: {$0 == c.type})
         })
     }
     
-    public func update(
+    mutating func update(
         name: String? = nil,
         type: ChannelType? = nil,
         castURL: String? = nil,
@@ -52,20 +52,19 @@ struct Station: Decodable, Identifiable, Hashable {
         background: String? = nil,
         contact: [Contact]? = nil
     ) -> Self {
-        var self_ = self
         
-        self_.name = name ?? self.name
-        self_.type = type ?? self.type
-        self_.castURL = castURL ?? self.castURL
-        self_.logo = logo ?? self.logo
-        self_.city = city ?? self.city
-        self_.frequence = frequence ?? self.frequence
-        self_.isPlaying = isPlaying ?? self.isPlaying
-        self_.webUrl = webUrl ?? self.webUrl
-        self_.background = background ?? self.background
-        self_.contact = contact ?? self.contact
+        self.name = name ?? self.name
+        self.type = type ?? self.type
+        self.castURL = castURL ?? self.castURL
+        self.logo = logo ?? self.logo
+        self.city = city ?? self.city
+        self.frequence = frequence ?? self.frequence
+        self.isPlaying = isPlaying ?? self.isPlaying
+        self.webUrl = webUrl ?? self.webUrl
+        self.background = background ?? self.background
+        self.contact = contact ?? self.contact
         
-        return self_
+        return self
     }
     
     mutating func play() {

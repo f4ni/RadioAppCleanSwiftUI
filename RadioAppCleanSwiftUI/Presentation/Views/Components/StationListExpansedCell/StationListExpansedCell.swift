@@ -25,7 +25,7 @@ struct StationListCellExpanded: View {
             .background(background)
         
         .onAppear {
-            withAnimation(.easeIn) {
+            withAnimation(.interactiveSpring) {
                 showDetail = true
             }
             
@@ -70,20 +70,19 @@ extension StationListCellExpanded {
                 .matchedGeometryEffect(id: "\(idString)-logoMask", in: namespace)
                 .padding()
             
-            Button(action: {
-                contactAction(.web)
-            }, label: {
-                Image(ContactType.web.rawValue)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 36)
-            })
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: .infinity,
-                alignment: .bottomTrailing
-            )
-            
+            if let url = station?.contact?.first(where: {$0.type == .web})?.url {
+                Link(destination: url, label: {
+                    Image(SocialNetworkType.web.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 36)
+                })
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .bottomTrailing
+                )
+            }
         }
         .fixedSize(horizontal: false, vertical: true)
         .allowsHitTesting(true)
@@ -133,15 +132,13 @@ extension StationListCellExpanded {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(contacts) { contact in
-                            if let type = contact.type {
-                                Button {
-                                    contactAction(type)
-                                } label: {
+                            if let url = contact.url, let type = contact.type {
+                                Link(destination: url, label: {
                                     Image(type.rawValue)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 58, height: 58)
-                                }
+                                })
                             }
                         }
                     }
@@ -161,15 +158,16 @@ extension StationListCellExpanded {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(contacts) { contact in
-                            if let type = contact.type {
-                                Button {
-                                    contactAction(type)
-                                } label: {
-                                    Image(type.rawValue)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 58, height: 58)
-                                }
+                            if let type = contact.type, let url = contact.url {
+                                Link(
+                                    destination: url,
+                                    label: {
+                                        Image(type.rawValue)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 58, height: 58)
+                                    }
+                                )
                             }
                         }
                     }
@@ -183,7 +181,7 @@ extension StationListCellExpanded {
 
 
 extension StationListCellExpanded {
-    func contactAction(_ contactType: ContactType) {
+    func contactAction(_ contactType: SocialNetworkType) {
         debugPrint(contactType)
     }
 }

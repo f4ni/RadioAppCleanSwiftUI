@@ -96,6 +96,9 @@
 		9ACC4CD42C9840870024F656 /* ChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CD32C9840870024F656 /* ChannelListCell.swift */; };
 		9ACC4CD52C9840870024F656 /* ChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CD32C9840870024F656 /* ChannelListCell.swift */; };
 		9ACC4CD62C9840870024F656 /* ChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC4CD32C9840870024F656 /* ChannelListCell.swift */; };
+		9AE70ECB2C9EFE1F00044E0B /* SocialNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE70ECA2C9EFE1F00044E0B /* SocialNetworkType.swift */; };
+		9AE70ECC2C9EFE1F00044E0B /* SocialNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE70ECA2C9EFE1F00044E0B /* SocialNetworkType.swift */; };
+		9AE70ECD2C9EFE1F00044E0B /* SocialNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE70ECA2C9EFE1F00044E0B /* SocialNetworkType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,7 @@
 		9AB843222C622A0E002B8124 /* EmbeddedFileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedFileDataModel.swift; sourceTree = "<group>"; };
 		9AB843262C6235BB002B8124 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		9ACC4CD32C9840870024F656 /* ChannelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChannelListCell.swift; path = RadioAppCleanSwiftUI/Presentation/Views/Components/ChannelListCell.swift; sourceTree = SOURCE_ROOT; };
+		9AE70ECA2C9EFE1F00044E0B /* SocialNetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,7 @@
 				9A5C22CB2C81ADAE009077BB /* CustomViewModifiers */,
 				9A5C22CA2C81AD8F009077BB /* Extensions */,
 				9A4AF0EF2C74E58800072301 /* NetworkMonitor.swift */,
+				9AE70ECA2C9EFE1F00044E0B /* SocialNetworkType.swift */,
 			);
 			path = Utitlities;
 			sourceTree = "<group>";
@@ -604,6 +609,7 @@
 				9AB842F12C59DFBF002B8124 /* NetworkRequest.swift in Sources */,
 				9A4AF0F42C79B34F00072301 /* StationListExpansedCell.swift in Sources */,
 				9A561EAC2C4FB54F00909FAA /* StationsEmbeddedRepository.swift in Sources */,
+				9AE70ECB2C9EFE1F00044E0B /* SocialNetworkType.swift in Sources */,
 				9A561EB02C4FB59900909FAA /* MainViewModel.swift in Sources */,
 				9A561EBB2C4FB65700909FAA /* PlayerManager.swift in Sources */,
 				9AB843232C622A0E002B8124 /* EmbeddedFileDataModel.swift in Sources */,
@@ -645,6 +651,7 @@
 				9A4AF0ED2C737E3D00072301 /* InfoPageView.swift in Sources */,
 				9AB843182C62004E002B8124 /* EmbeddedFileManager.swift in Sources */,
 				9AB843282C6235BB002B8124 /* Decoder.swift in Sources */,
+				9AE70ECC2C9EFE1F00044E0B /* SocialNetworkType.swift in Sources */,
 				9A561E712C4FB00D00909FAA /* RadioAppCleanSwiftUITests.swift in Sources */,
 				9A561E992C4FB35E00909FAA /* StationContact.swift in Sources */,
 				9AB843132C61FFFD002B8124 /* FileStorageClient.swift in Sources */,
@@ -696,6 +703,7 @@
 				9A8D6F802C70AD3800B7B730 /* StationsWebRepository.swift in Sources */,
 				9A8D6F882C70AD5A00B7B730 /* RadioAppCleanSwiftUIApp.swift in Sources */,
 				9A8D6F8F2C71E37D00B7B730 /* LinearGradient+extension.swift in Sources */,
+				9AE70ECD2C9EFE1F00044E0B /* SocialNetworkType.swift in Sources */,
 				9A561E9A2C4FB35E00909FAA /* StationContact.swift in Sources */,
 				9AB843252C622A0E002B8124 /* EmbeddedFileDataModel.swift in Sources */,
 				9A8D6F7A2C6FB0F000B7B730 /* Image+Extension.swift in Sources */,

@@ -10,23 +10,14 @@ import Foundation
 // MARK: - Contact
 struct Contact: Codable, Identifiable {
     let id = UUID()
-    var type: ContactType?
+    var type: SocialNetworkType?
     var target: String?
-}
-
-enum ContactType: String, Codable{
-    case telephone
-    case whatsapp
-    case telegram
-    case youtube
-    case instagram
-    case web
     
-    static var toFollow: [Self] {
-        [.instagram, .youtube]
-    }
-    
-    static var toContract: [Self] {
-        [.telephone, .whatsapp, .telegram]
+    var url: URL? {
+        guard let target else { return nil }
+        
+        guard let urlprefix = type?.getURLPrefix, let url = URL(string: urlprefix + target) else { return nil }
+        
+        return url
     }
 }
