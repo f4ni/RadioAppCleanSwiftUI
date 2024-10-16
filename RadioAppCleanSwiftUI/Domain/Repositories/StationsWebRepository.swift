@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol StationsWebRepositoryInterface {
+protocol StationsWebRepositoryInterface: AnyObject {
     func fetchStations(genre: String?, country: String?) async throws -> [Station]
 }
 
-struct StationsWebRepository: StationsWebRepositoryInterface {
+final class StationsWebRepository: StationsWebRepositoryInterface {
     func fetchStations(genre: String? = nil, country: String? = nil) async throws -> [Station] {
         try await NetworkClient().send(APIEndpoints.getStationList(FetchRadioStationsRequest(genre: genre, country: country)))
     }

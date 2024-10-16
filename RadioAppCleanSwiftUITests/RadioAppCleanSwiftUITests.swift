@@ -9,21 +9,45 @@ import XCTest
 @testable import RadioAppCleanSwiftUI
 
 final class RadioAppCleanSwiftUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    var viewModel: MainViewModel?
+    var mockStationsInteractor: MockStationsInteractor?
+    var mockStationsDataForLocal: [Station] {
+        [
+            .init(name: "Radio 1", url: "https://radio1.com"),
+            .init(name: "Radio 2", url: "https://radio2.com"),
+            .init(name: "Radio 3", url: "https://radio3.com"),
+        ]
+    }
+    
+    var mockStationDataForWeb: [Station] {
+        [
+            .init(name: "Radio 4", url: "https://radio4.com"),
+            .init(name: "Radio 5", url: "https://radio5.com"),
+            .init(name: "Radio 6", url: "https://radio6.com"),
+        ]
+    }
+    
+    override func setUp() {
+        viewModel = MainViewModel(
+            stationsInteractor: MockStationsInteractor()
+        )
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        viewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testGetRadioStationsSuccessfully() async throws {
+        let expectedStations = mockStationsDataForLocal
+        let localRepository = MockStationsEmbeddedRepository()
+        localRepository.fetchStationsReturnValue = expectedStations
+        let interactor = MockStationsInteractor(stationsEmbeddedFilesRepository: localRepository)
+        viewModel = MainViewModel(stationsInteractor: interactor)
+        
+        await viewModel?.getRadioStations()
+        
+        XCTAssertEqual(viewModel?.stations, expectedStations)
     }
 
     func testPerformanceExample() throws {

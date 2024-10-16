@@ -7,11 +7,11 @@
 
 import Combine
 
-protocol StationsEmbeddedRepositoryInterface {
+protocol StationsEmbeddedRepositoryInterface: AnyObject {
     func fetchStations() throws -> [Station]
 }
 
-struct StationsEmbeddedRepository: StationsEmbeddedRepositoryInterface {
+class StationsEmbeddedRepository: StationsEmbeddedRepositoryInterface {
     func fetchStations() throws -> [Station] {
         try EmbeddedFileClient().parseData(with: .stations)
     }

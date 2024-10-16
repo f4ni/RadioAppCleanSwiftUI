@@ -19,7 +19,7 @@ struct Station: Decodable, Identifiable, Hashable {
     let id = UUID()
     var name: String?
     var type: ChannelType?
-    var castURL: String?
+    var url: String?
     var logo: String?
     var city: String?
     var frequence: String?
@@ -40,10 +40,34 @@ struct Station: Decodable, Identifiable, Hashable {
         })
     }
     
+    init(
+        name: String? = nil,
+        type: ChannelType? = nil,
+        url: String? = nil,
+        logo: String? = nil,
+        city: String? = nil,
+        frequence: String? = nil,
+        isPlaying: Bool? = nil,
+        webUrl: String? = nil,
+        background: String? = nil,
+        contact: [Contact]? = nil
+    ) {
+        self.name = name
+        self.type = type
+        self.url = url
+        self.logo = logo
+        self.city = city
+        self.frequence = frequence
+        self.isPlaying = isPlaying
+        self.webUrl = webUrl
+        self.background = background
+        self.contact = contact
+    }
+    
     mutating func update(
         name: String? = nil,
         type: ChannelType? = nil,
-        castURL: String? = nil,
+        url: String? = nil,
         logo: String? = nil,
         city: String? = nil,
         frequence: String? = nil,
@@ -55,7 +79,7 @@ struct Station: Decodable, Identifiable, Hashable {
         
         self.name = name ?? self.name
         self.type = type ?? self.type
-        self.castURL = castURL ?? self.castURL
+        self.url = url ?? self.url
         self.logo = logo ?? self.logo
         self.city = city ?? self.city
         self.frequence = frequence ?? self.frequence
