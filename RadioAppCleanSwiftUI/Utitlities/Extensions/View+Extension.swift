@@ -24,3 +24,9 @@ extension View {
         self.modifier(RotationAnimaton(speed: speed))
     }
 }
+
+extension View {
+    public func blink() -> some View {
+        modifier(BlinkViewModifier())
+    }
+}

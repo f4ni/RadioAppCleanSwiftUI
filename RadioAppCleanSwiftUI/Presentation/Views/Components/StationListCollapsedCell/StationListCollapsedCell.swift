@@ -56,9 +56,8 @@ extension StationListCellCollapsed {
                 content.buttonLabel
                 .resizable()
                 .frame(width: 44, height: 44)
-                .if(loading && !content.isPlaying) { view in
-                    view
-                    .rotationAnimation(speed: 360)
+                .if(awaitingToLoad && !content.isPlaying) { view in
+                    view.blink()
                 }
             }
             .buttonStyle(.borderless)
