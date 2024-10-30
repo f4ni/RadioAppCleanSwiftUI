@@ -20,15 +20,18 @@ struct StationListCellExpanded: View {
     var body: some View {
         
         container
-            .padding(24)
+            .padding(20)
             .overlay(overlay)
             .background(background)
         
         .onAppear {
-            withAnimation(.interactiveSpring) {
-                showDetail = true
+            Task {
+                
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                withAnimation {
+                    showDetail = true
+                }
             }
-            
         }
     }
 }
@@ -45,8 +48,11 @@ extension StationListCellExpanded {
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             if showDetail {
-                followUs
-                contactsContainer
+                Group {
+                    followUs
+                    contactsContainer
+                }
+                .transition(.move(edge: .top))
             }
         }
     }
