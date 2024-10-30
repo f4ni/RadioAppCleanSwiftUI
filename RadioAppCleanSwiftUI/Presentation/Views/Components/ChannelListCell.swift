@@ -12,6 +12,8 @@ struct ChannelListCell: View {
     @Namespace var namespace
     var station: Station?
     @Binding var expandedStation: Station?
+    var awaitingToLoad: Bool
+    var isPlaying: Bool
     var playPauseButtonAction: () -> Void
     var isExpanded: Bool {
         expandedStation == station
@@ -25,10 +27,17 @@ struct ChannelListCell: View {
                 if isExpanded {
                     StationListCellExpanded(namespace: namespace, station: station) {
                         collapseCell()
-                   }
-               } else {
-                   StationListCellCollapsed(namespace: namespace, content: .init(station: station, buttonLabel: Image.playButton)) {
-
+                    }
+                } else {
+                    StationListCellCollapsed(
+                        awaitingToLoad: awaitingToLoad,
+                        namespace: namespace,
+                        content: .init(
+                            station: station,
+                            buttonLabel: getPlayPauseButtonLabelImage()
+                        )
+                    ) {
+                        playPauseButtonAction()
                     }
                     .onTapGesture {
                         expandCell()
@@ -52,22 +61,38 @@ struct ChannelListCell: View {
         debugPrint("collapse")
     }
 
-    private func getPlayPauseButtonLabelImage(for station: Station? = nil) ->  Image {
-        (station?.isPlaying ?? false) ? .pauseButton : .playButton
+    private func getPlayPauseButtonLabelImage() -> Image {
+        isPlaying ? .pauseButton : .playButton
     }
 }
 
 #Preview {
-    @Namespace var namespace
+    @Previewable @State var st2: Station? = Station(name: "chnl2")
+    @Previewable @State var isPlaying: Bool = false
+    @Previewable @State var awaitingToLoad: Bool = false
+    @Previewable @Namespace var namespace
     let st1 = Station(name: "chnl1")
-    @State var st2: Station? = Station(name: "chnl2")
     
-    return VStack {
+    VStack {
         ChannelListCell(
             namespace: _namespace,
             station: st1,
             expandedStation: $st2,
-            playPauseButtonAction: {}
+            awaitingToLoad: awaitingToLoad,
+            isPlaying: isPlaying,
+            playPauseButtonAction: {
+
+                if isPlaying {
+                    isPlaying.toggle()
+                } else {
+                    awaitingToLoad.toggle()
+                    Task {
+                        try await Task.sleep(nanoseconds: 3_000_000_000)
+                        isPlaying = true
+                        awaitingToLoad.toggle()
+                    }
+                }
+            }
         )
         .padding()
     }
