@@ -1,3 +1,12 @@
+//
+//  CircularProgressIndicatorView.swift
+//  RadioAppCleanSwiftUI
+//
+//  Created by Furkan ic on 30.10.2024.
+//
+
+import SwiftUI
+
 struct CircularProgressIndicatorView: View {
     
     @State private var animate = false
