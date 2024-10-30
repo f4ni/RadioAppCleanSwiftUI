@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct ChannelListCell: View {
 
     @Namespace var namespace
     var station: Station?
     @Binding var expandedStation: Station?
-    var timeControlStatus: AVPlayer.TimeControlStatus
     var playPauseButtonAction: () -> Void
     var isExpanded: Bool {
         expandedStation == station
@@ -69,7 +67,6 @@ struct ChannelListCell: View {
             namespace: _namespace,
             station: st1,
             expandedStation: $st2,
-            timeControlStatus: .waitingToPlayAtSpecifiedRate,
             playPauseButtonAction: {}
         )
         .padding()
